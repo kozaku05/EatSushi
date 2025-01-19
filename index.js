@@ -11,6 +11,9 @@ let promise = false;
 const [x, y, width, height] = [200, 340, 380, 35];
 (async () => {
   const browser = await puppeteer.launch({ headless: false });
+  page.on("close", () => {
+    process.exit(0);
+  });
   page = await browser.newPage();
   await page.goto("https://sushida.net/play.html");
   start();
@@ -43,9 +46,6 @@ const [x, y, width, height] = [200, 340, 380, 35];
       }, 1000);
     });
   }
-  page.on("close", () => {
-    process.exit(0);
-  });
 })();
 async function shot() {
   if (promise) return;
