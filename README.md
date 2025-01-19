@@ -20,7 +20,7 @@
 1. リポジトリをクローンまたはダウンロードしてください。
 
    ```bash
-   https://github.com/kozaku05/EatSushi.git
+   git clone https://github.com/kozaku05/EatSushi.git
    ```
 
 2. 必要な依存関係をインストールします。
