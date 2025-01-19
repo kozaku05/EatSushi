@@ -11,10 +11,10 @@ let promise = false;
 const [x, y, width, height] = [200, 340, 380, 35];
 (async () => {
   const browser = await puppeteer.launch({ headless: false });
+  page = await browser.newPage();
   page.on("close", () => {
     process.exit(0);
   });
-  page = await browser.newPage();
   await page.goto("https://sushida.net/play.html");
   start();
   async function start() {
